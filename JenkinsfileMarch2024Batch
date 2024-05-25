@@ -7,8 +7,7 @@ echo "Jenkins Home dir is: ${env.JENKINS_HOME}"
 echo "THe Jenkins node name is: ${env.NODE_NAME}"
 echo "The Build number is: ${env.BUILD_NUMBER}"
 
-
-properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '7', daysToKeepStr: '', numToKeepStr: '7')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
 
 stage('CheckoutCode'){
 git branch: 'development', credentialsId: 'd6df2d94-c538-42c5-9f24-fe8f34e2d3ed', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
